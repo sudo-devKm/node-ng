@@ -22,5 +22,5 @@ export type ErrorOptions = {
 }
 
 export type SchemaValidationOptions = {
-    [key: string]: { schema: Joi.Schema, options?: Joi.ValidationOptions }
+    [key: string]: { schema: Joi.Schema, options?: Joi.AsyncValidationOptions }
 }

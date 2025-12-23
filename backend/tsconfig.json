@@ -1,0 +1,35 @@
+{
+	"$schema": "https://www.schemastore.org/tsconfig",
+	"compileOnSave": true,
+	"ts-node": {
+		"transpileOnly": true,
+		"require": ["tsconfig-paths/register"]
+	},
+	"compilerOptions": {
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"target": "es2022",
+		"typeRoots": ["src/@types", "node_modules/@types"],
+		"sourceMap": true,
+		"declaration": true,
+		"declarationMap": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"noUncheckedIndexedAccess": true,
+		"exactOptionalPropertyTypes": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"noUncheckedSideEffectImports": true,
+		"moduleDetection": "force",
+		"skipLibCheck": true,
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist", "build"]
+}

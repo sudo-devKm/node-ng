@@ -1,0 +1,23 @@
+services:
+  mysql:
+    image: mysql:8.0-debian
+    container_name: app_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-admin}
+      MYSQL_USER: ${MYSQL_USER:-admin}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-admin}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-ngNode}
+    ports:
+      - "3306:3306"
+    volumes:
+      - app_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  app_mysql_data:
+    driver: local

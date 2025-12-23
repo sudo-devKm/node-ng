@@ -1,0 +1,17 @@
+# packages
+node_modules
+
+# code editor files
+.idea/
+
+# build
+dist/
+build/
+
+# logs folder
+logs/
+
+# secret files
+.env
+.env.development
+!.env.example 
